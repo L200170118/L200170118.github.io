@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> TUGAS 1 SISTEM ADMINISTRASI BASIS DATA </title>
+</head>
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td{
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    table, th, td {
+        border: 1px solid black;
+    th {
+        text-align: center;
+    }
+</style>
+
+<body bgcolor='#99ffff'>
+	
+    <h1>PERINTAH MYSQL BERDASARKAN DDL dan DML dalam SERVER BASISDATA MYSQL </h1>
+    
+    <h2> A. DDL (Data Definition Language) </h2>
+    <p> Merupakan perintah-perintah yang biasa digunakan administrator database untuk mendefinisikan skema dan subskema database. </p>
+
+    <table>
+      <tr>
+        <th> PERINTAH </th>
+        <th> DEFINISI </th>
+        <th> CONTOH </th>
+      </tr>
+      <tr>
+        <td> CREATE </td>
+        <td> Perintah ini digunakan untuk membuat, termasuk di antaranya membuat database baru, tabel baru, view baru, dan kolom. </td>
+        <td> CREATE TABLE mahasiswa ( <br> 
+            nama_mahasiswa varchar(225) default NULL, <br> 
+            nama_jurusan varchar(20) default NULL, <br> 
+            NIM varchar(10) default NULL, <br> 
+            PRIMARY KEY (nama_mahasiswa)<br>
+            )</td>
+      </tr>
+      <tr>
+        <td> ALTER </td>
+        <td> Perintah ini digunakan untuk mengubah struktur tabel yang telah dibuat. </td>
+        <td>  alter table akademik add email varchar (25); </td>
+      </tr>
+      <tr>
+        <td> TRUNCATE </td>
+        <td> Menghapus semua  isi dari suatu table database. </td>
+        <td> TRUNCATE TABLE table_name;</td>
+      </tr>
+      <tr>
+        <td> DROP </td>
+        <td> Perintah ini digunakan untuk menghapus database dan tabel. </td>
+        <td> Drop table mahasiswa; </td>
+      </tr>
+      <tr>
+        <td> DESC/DESCRIBE </td>
+        <td> Perintah Untuk melihat struktur table secara detail. </td>
+        <td> DESC mahasiswa; </td>
+      </tr>
+      <tr>
+        <td> RENAME </td>
+        <td> Perintah untuk mengganti nama table/ relasi. </td>
+        <td> Rename table nama_table to nama_tabel baru; </td>
+      </tr>
+    </table>
+
+    <br> <br>
+
+    <h2> B. DML (Data Manipulation Language) </h2>
+    <p> Merupakan perintah-perintah yang biasa digunakan administrator database untuk mendefinisikan skema dan subskema database.Merupakan sub perintah dari bahasa SQL yang digunakan untuk memanipulasi data dalam database yang telah dibuat.  </p>
+
+    <table>
+      <tr>
+        <th> PERINTAH </th>
+        <th> DEFINISI </th>
+        <th> CONTOH </th>
+      </tr>
+      <tr>
+        <td> INSERT  </td>
+        <td> Perintah ini digunakan untuk menyisipkan atau memasukkan data baru ke dalam tabel. Penggunaannya setelah database dan tabel selesai dibuat. </td>
+        <td> INSERT INTO mahasiswa (nim,nama,kelas) VALUES (‘L200170118’,'SARTIKA RIZKY M’,’B’);</td>
+      </tr>
+      <tr>
+        <td> UPDATE </td>
+        <td> Perintah ini digunakan untuk memperbarui data lama menjadi data terkini. </td>
+        <td> update mahasiswa set nama = 'YAYAS' <br> 
+             where npm = 'L20017009',; </td>
+      </tr>
+      <tr>
+        <td> DELETE </td>
+        <td> Perintah ini digunakan untuk menghapus data dari table. </td>
+        <td>  DELETE FROM mahasiswa WHERE nama = ‘SARTIKA RIZKY M’; </td>
+      </tr>
+      <tr>
+        <td> SELECT </td>
+        <td> Perintah ini digunakan untuk mengambil data atau menampilkan data dari satu tabel atau beberapa tabel dalam relasi. </td>
+        <td> a.    SELECT nama,nim, jurusan FROM mahasiswa; <br>
+             b.    SELECT * FROM mahasiswa; <br> 
+             c.    SELECT nama,nim, jurusan FROM mahasiswa WHERE jurusan = ‘Informatika’; <br>
+             d.    SELECT * FROM mahasiswa WHERE nama like ‘AN%’ ORDER BY nama ASC; </td>
+      </tr>
+    </table>   
+</body>
+</html>
